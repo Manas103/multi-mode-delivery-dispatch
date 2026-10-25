@@ -1,0 +1,10 @@
+build/
+.gradle/
+out/
+*.class
+.idea/
+*.iml
+docker-data/
+
+# generated gRPC/protobuf Java and Kotlin sources, regenerate with: ./gradlew generateProto
+# (not tracked; build/generated is already excluded by build/ above)

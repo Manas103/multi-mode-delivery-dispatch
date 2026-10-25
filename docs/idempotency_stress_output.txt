@@ -1,0 +1,8 @@
+[kafka-producer-network-thread | producer-1] WARN org.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Error while fetching metadata with correlation id 1 : {handoffs-idempotency-stress-a2819c2c-f292-4665-8fbb-8715f4f89129=UNKNOWN_TOPIC_OR_PARTITION}
+produced=50000
+first_pass_applied=50000
+first_pass_duplicate=0
+forced_redeliveries=50000
+redelivered_wrongly_applied_as_new=0
+redelivered_correctly_detected_as_duplicate=50000
+ledger_total_rows_this_topic_scope=50000

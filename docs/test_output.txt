@@ -1,0 +1,5 @@
+com.doordashsim.dispatch.CostModelTest tests=3 skipped=0 failures=0
+com.doordashsim.dispatch.EligibilityTest tests=10 skipped=0 failures=0
+com.doordashsim.dispatch.HandoffLedgerIntegrationTest tests=2 skipped=0 failures=0
+com.doordashsim.dispatch.HandoffStateMachineTest tests=5 skipped=0 failures=0
+com.doordashsim.dispatch.KafkaHandoffIntegrationTest tests=2 skipped=0 failures=0

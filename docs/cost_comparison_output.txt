@@ -1,0 +1,5 @@
+orders_replayed=250000
+mode_counts={COURIER=179627, DRONE=48268, SIDEWALK_ROBOT=22105}
+dispatcher_total_cost_cents=1.2517321309373607E8
+courier_only_total_cost_cents=1.4537480053226283E8
+cost_savings_pct=13.8962

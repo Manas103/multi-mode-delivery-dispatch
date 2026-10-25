@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package dispatch;
+
+option java_package = "com.doordashsim.dispatch.proto";
+option java_multiple_files = true;
+
+enum Mode {
+  MODE_UNSPECIFIED = 0;
+  COURIER = 1;
+  SIDEWALK_ROBOT = 2;
+  DRONE = 3;
+}
+
+message OrderRequest {
+  string order_id = 1;
+  double payload_kg = 2;
+  double distance_km = 3;
+  double wind_speed_kph = 4;
+  bool precipitation = 5;
+  bool geofence_cleared_robot = 6;
+  bool geofence_cleared_drone = 7;
+  bool merchant_ready = 8;
+}
+
+message ModeScore {
+  Mode mode = 1;
+  bool eligible = 2;
+  string ineligible_reason = 3;
+  double cost_cents = 4;
+}
+
+message AssignmentResponse {
+  string order_id = 1;
+  Mode assigned_mode = 2;
+  double cost_cents = 3;
+  repeated ModeScore scores = 4;
+}
+
+message HandoffEvent {
+  string handoff_id = 1;
+  string order_id = 2;
+  string state = 3;
+  int64 sequence = 4;
+}
+
+message HandoffAck {
+  string handoff_id = 1;
+  bool applied = 2;
+  string resulting_state = 3;
+}
+
+service DispatchService {
+  rpc AssignOrder (OrderRequest) returns (AssignmentResponse);
+  rpc ApplyHandoff (HandoffEvent) returns (HandoffAck);
+}
